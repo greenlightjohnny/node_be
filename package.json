@@ -1,0 +1,7 @@
+{
+  "name": "nodebe",
+  "version": "1.0.0",
+  "description": "node be",
+  "main": "index.js",
+  "license": "MIT"
+}
