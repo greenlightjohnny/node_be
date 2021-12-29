@@ -3,5 +3,19 @@
   "version": "1.0.0",
   "description": "node be",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.7",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.1.4",
+    "nanoid": "^3.1.30",
+    "pino": "^7.6.2",
+    "pino-pretty": "^7.3.0",
+    "zod": "^3.11.6"
+  }
 }
