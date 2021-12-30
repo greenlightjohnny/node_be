@@ -24,7 +24,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
       session: session._id,
     },
 
-    { expiresIn: process.env.accessTokenTTL }
+    { expiresIn: process.env.ACCESS_TOKEN }
   );
 
   //create refresh token
@@ -34,7 +34,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
       session: session._id,
     },
 
-    { expiresIn: process.env.refreshTokenTTL }
+    { expiresIn: process.env.REFRESH_TOKEN }
   );
 
   //Return access and refresh tokens

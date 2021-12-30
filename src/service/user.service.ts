@@ -9,7 +9,8 @@ export async function createUser(
 ) {
   try {
     const user = await UserModel.create(input);
-    return omit(user.toJSON(), "password");
+    //return omit(user.toJSON(), "password");
+    return omit(user.toObject(), "password");
   } catch (e: any) {
     throw new Error(e);
   }
@@ -29,5 +30,6 @@ export async function validatePassword({
   }
   const isValid = await user.comparePassword(password);
   if (!isValid) return false;
-  return omit(user.toJSON(), "password");
+  //return omit(user.toJSON(), "password");
+  return omit(user.toObject(), "password");
 }
