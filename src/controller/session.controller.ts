@@ -26,6 +26,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
 
     { expiresIn: process.env.accessTokenTTL }
   );
+
   //create refresh token
   const refreshToken = signJwt(
     {
@@ -42,10 +43,8 @@ export async function createUserSessionHandler(req: Request, res: Response) {
 
 export async function getUserSessionsHandler(req: Request, res: Response) {
   const userId = res.locals.user._id;
-  console.log("***********", userId);
 
   const sessions = await findSessions({ user: userId, valid: true });
-  console.log("*88888888888888888888", { sessions });
 
   return res.send(sessions);
 }

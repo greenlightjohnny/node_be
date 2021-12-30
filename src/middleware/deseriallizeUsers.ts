@@ -7,14 +7,13 @@ const deserializeUser = (req: Request, res: Response, next: NextFunction) => {
     /^Bearer\s/,
     ""
   );
-  console.log("$$$$$$$$$$$$", accessToken);
-
+  console.log("deserialaccesstoken", accessToken);
   if (!accessToken) {
     return next();
   }
 
   const { decoded, expired } = verifyJwt(accessToken);
-  console.log("$$$$$$", decoded);
+  console.log("deserialdecoded", decoded);
   if (decoded) {
     res.locals.user = decoded;
     return next();
