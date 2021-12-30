@@ -4,7 +4,7 @@ import config from "config";
 const privateKey = process.env.PRIVATE_KEY?.replace(/\\n/gm, "\n") || "";
 const publicKey = process.env.PUBLIC_KEY?.replace(/\\n/gm, "\n") || "";
 //console.log("$$$$$$$$$$$$$$", publicKey?.replace(/\\n/g, "\n"));
-console.log("$$$$$$$$$$$$$$", publicKey);
+console.log("$$$$$$$$$$$$$$Privatekey", privateKey);
 
 export function signJwt(object: Object, options?: jwt.SignOptions | undefined) {
   return jwt.sign(object, privateKey, {
