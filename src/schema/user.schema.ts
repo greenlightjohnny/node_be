@@ -1,6 +1,6 @@
-import { object, string } from "zod";
+import { object, string, TypeOf } from "zod";
 
-const createUserSchema = object({
+export const createUserSchema = object({
   body: object({
     name: string({
       required_error: "Name is requried",
@@ -14,7 +14,13 @@ const createUserSchema = object({
     email: string({
       required_error: "Email is required",
     }).email("Email is not valid"),
+  }).refine((data) => data.password === data.passwordConfirmation, {
+    message: "Passwords do not match",
+    path: ["PasswordConfirmation"],
   }),
 });
 
-export default createUserSchema;
+export type CreateUserInput = Omit<
+  TypeOf<typeof createUserSchema>,
+  "body.passwordConfirmation"
+>;
