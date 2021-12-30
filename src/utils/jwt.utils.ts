@@ -1,14 +1,15 @@
 import jwt from "jsonwebtoken";
 import config from "config";
 
-const privateKey = process.env.privateKey || "";
-const publicKey = process.env.publicKey || "";
-console.log("ahhh", "ISTHERE ANY");
+const privateKey = process.env.PRIVATE_KEY?.replace(/\\n/gm, "\n") || "";
+const publicKey = process.env.PUBLIC_KEY?.replace(/\\n/gm, "\n") || "";
+//console.log("$$$$$$$$$$$$$$", publicKey?.replace(/\\n/g, "\n"));
+console.log("$$$$$$$$$$$$$$", publicKey);
 
 export function signJwt(object: Object, options?: jwt.SignOptions | undefined) {
   return jwt.sign(object, privateKey, {
     ...(options && options),
-    algorithm: "RS256",
+    //algorithm: "RS256",
   });
 }
 

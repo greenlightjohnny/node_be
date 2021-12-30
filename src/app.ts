@@ -3,6 +3,7 @@ import config from "config";
 import connect from "./utils/connect";
 import logger from "./utils/logger";
 import routes from "./routes";
+require("dotenv").config();
 
 const port = config.get<number>("port");
 const app = express();

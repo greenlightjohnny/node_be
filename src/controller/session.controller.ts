@@ -5,7 +5,7 @@ import { signJwt } from "../utils/jwt.utils";
 
 export async function createUserSessionHandler(req: Request, res: Response) {
   //check password
-  const user = await validatePassword(req.body, req.body);
+  const user = await validatePassword(req.body);
   if (!user) {
     return res.status(401).send("Invalid user, not found");
   }
