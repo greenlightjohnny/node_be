@@ -4,6 +4,9 @@
   "description": "node be",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "config": "^3.3.6",
