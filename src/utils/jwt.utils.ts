@@ -3,6 +3,7 @@ import config from "config";
 
 const privateKey = process.env.privateKey || "";
 const publicKey = process.env.publicKey || "";
+console.log("ahhh", "ISTHERE ANY");
 
 export function signJwt(object: Object, options?: jwt.SignOptions | undefined) {
   return jwt.sign(object, privateKey, {
