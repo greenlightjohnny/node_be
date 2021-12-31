@@ -27,7 +27,9 @@ export async function createUserSessionHandler(req: Request, res: Response) {
     { expiresIn: process.env.ACCESS_TOKEN }
   );
 
-  //create refresh token
+  //create refresh token eee
+  const test = process.env.ACCESS_TOKEN;
+  console.log("###################", test);
   const refreshToken = signJwt(
     {
       ...user,
