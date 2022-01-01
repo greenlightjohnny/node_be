@@ -23,7 +23,7 @@ export async function updateSession(
 export async function reissueToken({ refreshToken }: { refreshToken: string }) {
   const { decoded } = verifyJwt(refreshToken);
 
-  if (!decoded || !get(decoded, "_id")) return false;
+  if (!decoded || !get(decoded, "session")) return false;
 
   const session = await SessionModel.findById(get(decoded, "session"));
 
